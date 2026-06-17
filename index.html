@@ -1,14 +1,130 @@
 <!DOCTYPE html>
-<html lang='en'>
+<html lang="es">
 <head>
-    <meta charset='utf-8'>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <title>MULA</title>
-    <link rel='stylesheet' href='main.css'>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hola Mundo | Verde Neón</title>
+
+    <!-- Archivo CSS externo -->
+    <link rel="stylesheet" href="main.css">
+
+    <!-- Tipografía moderna -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Fondos fijos -->
+    <div class="grid-bg"></div>
+    <div class="particles-container" id="particles"></div>
 
-    <h1>HOLA MUNDO</h1>
+    <!-- HERO PRINCIPAL -->
+    <section class="hero fullscreen">
+        <div class="main-content">
+            <!-- Anillos animados -->
+            <div class="ring ring-1"></div>
+            <div class="ring ring-2"></div>
+            <div class="ring ring-3"></div>
 
+            <!-- Tarjeta central -->
+            <div class="card">
+                <div class="icon-wrapper">
+                    <svg class="icon-globe" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.8" />
+                        <ellipse cx="12" cy="12" rx="4" ry="10" stroke="currentColor" stroke-width="1.8" />
+                        <line x1="2" y1="12" x2="22" y2="12" stroke="currentColor" stroke-width="1.8" />
+                        <line x1="12" y1="2" x2="12" y2="22" stroke="currentColor" stroke-width="1.8" />
+                    </svg>
+                </div>
+
+                <h1 class="title">
+                    <span class="title-text" data-text="Hola Mundo">Hola Mundo</span>
+                    <span class="title-glow"></span>
+                </h1>
+
+                <div class="divider">
+                    <span class="divider-dot"></span>
+                    <span class="divider-line"></span>
+                    <span class="divider-dot"></span>
+                </div>
+
+                <p class="subtitle">Creatividad en cada línea de código</p>
+
+                <div class="badge">
+                    <span class="badge-dot-pulse"></span>
+                    Listo para crear
+                </div>
+            </div>
+
+            <!-- Indicador de scroll -->
+            <div class="scroll-hint">
+                <span class="scroll-arrow"></span>
+                <span class="scroll-arrow"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN EXTRA CON MÁS CONTENIDO -->
+    <section class="extra-content">
+        <div class="container">
+            <h2 class="section-title">Acerca de mí</h2>
+            <p class="about-text">
+                Soy un desarrollador apasionado por la lógica de programación y la resolución de problemas complejos. 
+                Disfruto transformar ideas abstractas en soluciones eficientes mediante algoritmos limpios y estructuras bien pensadas. 
+                Este espacio es mi laboratorio creativo, donde cada proyecto comienza con un simple "Hola Mundo".
+            </p>
+
+            <div class="skills">
+                <h3 class="skills-heading">Lógica de programación</h3>
+                <div class="skills-grid">
+                    <span class="skill-badge">Algoritmos</span>
+                    <span class="skill-badge">Estructuras de datos</span>
+                    <span class="skill-badge">Resolución de problemas</span>
+                    <span class="skill-badge">Patrones de diseño</span>
+                    <span class="skill-badge">Pseudocódigo</span>
+                    <span class="skill-badge">Complejidad computacional</span>
+                    <span class="skill-badge">Depuración</span>
+                </div>
+            </div>
+
+            <button class="btn-neon">
+                <span class="btn-text">Explorar proyectos</span>
+                <span class="btn-glow"></span>
+            </button>
+        </div>
+    </section>
+
+    <!-- Script partículas -->
+    <script>
+        (function () {
+            const container = document.getElementById('particles');
+            const numParticles = 55;
+
+            for (let i = 0; i < numParticles; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+
+                const x = Math.random() * 100;
+                const y = Math.random() * 100;
+                particle.style.left = x + '%';
+                particle.style.top = y + '%';
+
+                const size = Math.random() * 2.5 + 1;
+                particle.style.width = size + 'px';
+                particle.style.height = size + 'px';
+
+                const duration = Math.random() * 6 + 4;
+                particle.style.animationDuration = duration + 's';
+
+                const delay = Math.random() * 5;
+                particle.style.animationDelay = delay + 's';
+
+                const opacity = Math.random() * 0.7 + 0.3;
+                particle.style.setProperty('--opacity-base', opacity);
+
+                container.appendChild(particle);
+            }
+        })();
+    </script>
 </body>
-</html>>
+</html>
